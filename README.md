@@ -1,2 +1,2 @@
 # Point-Calculator
-Java and Spring based app for calculating reward points earned by a customer on recorded purchases.
+Java and Spring app for a retailer wanting to calculate reward points earned by a customer on recorded purchases.
