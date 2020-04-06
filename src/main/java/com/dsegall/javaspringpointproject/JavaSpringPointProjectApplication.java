@@ -93,30 +93,34 @@ public class JavaSpringPointProjectApplication {
 // ************************************************************************************
 	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet1) ){
 		String newline = System.lineSeparator();
-		System.out.println("DATA SET 1" + newline + "Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-				+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-				+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: " + answerSet.getValue4() + newline);
+		System.out.println(newline + "DATA SET 1" + newline);
+		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
+			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
+			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: " + answerSet.getValue4() + newline);
 	}
 	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet2) ){
-			String newline = System.lineSeparator();
-			System.out.println("DATA SET 2" + newline + "Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-					+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-					+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
-					+ answerSet.getValue4() + newline);
+		String newline = System.lineSeparator();
+		System.out.println(newline + "DATA SET 2" + newline);
+		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
+			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
+			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
+			+ answerSet.getValue4() + newline);
 		}
-		for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet3) ){
-			String newline = System.lineSeparator();
-			System.out.println("DATA SET 3" + newline + "Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-					+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-					+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
-					+ answerSet.getValue4() + newline);
+	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet3) ){
+		String newline = System.lineSeparator();
+		System.out.println(newline + "DATA SET 3" + newline);
+		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
+			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
+			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
+			+ answerSet.getValue4() + newline);
 		}
-		for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet4) ){
-			String newline = System.lineSeparator();
-			System.out.println("DATA SET 4" + newline + "Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-					+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-					+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
-					+ answerSet.getValue4() + newline);
+	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet4) ){
+		String newline = System.lineSeparator();
+		System.out.println(newline + "DATA SET 4" + newline);
+		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
+			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
+			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
+			+ answerSet.getValue4() + newline);
 		}
 
 
@@ -134,6 +138,7 @@ public class JavaSpringPointProjectApplication {
 			Quintet<String, Integer, Integer, Integer, Integer> results = Quintet.with(customer, monthlyPointTotals.get("jan"),monthlyPointTotals.get("feb"), monthlyPointTotals.get("march"), monthlyPointTotals.get("three"));
 			calculatedResults.add(results);
 		}
+//		System.out.println("calculatedResults: " + calculatedResults);
 		return calculatedResults;
 	}
 //	            method to create an arrayList of customer names
@@ -143,6 +148,7 @@ public class JavaSpringPointProjectApplication {
 			if (!customerList.contains(sale.getValue1()))
 			customerList.add(sale.getValue1());
 		}
+//		System.out.println("customerList: " + customerList);
 		return customerList;
 	}
 //	          method to create an arrayList of sales records for each customer
@@ -152,6 +158,7 @@ public class JavaSpringPointProjectApplication {
 			if (sale.getValue1().equals(name))
 				customerSalesData.add(sale);
 		}
+//		System.out.println("customerSalesData: " + customerSalesData);
 		return customerSalesData;
 	}
 //	          method to find points for each month
@@ -178,6 +185,7 @@ public class JavaSpringPointProjectApplication {
 				monthlyPointTotals.put("feb", febTotalPoints);
 				monthlyPointTotals.put("march", marchTotalPoints);
 				monthlyPointTotals.put("three", threeMonthTotalPoints);
+//				System.out.println("monthlyPointTotals:" + monthlyPointTotals);
 				return monthlyPointTotals;
 			}
 ////	         method to calculate points
@@ -187,9 +195,11 @@ public class JavaSpringPointProjectApplication {
 				return 0;
 			} else if
 			   (amountSpent >= 50.00 && amountSpent <= 99.99){
+				System.out.println(amountSpent.intValue() - 50);
 				return amountSpent.intValue() - 50;
 			} else if (amountSpent >= 100.00) {
-				pointCounterOverOneHundred += ((amountSpent.intValue() - 100) * 2);
+				pointCounterOverOneHundred += ((amountSpent.intValue()) - 100) * 2;
+//				System.out.println("pointCounterOverOneHundred: " + pointCounterOverOneHundred);
 				return pointCounterOverOneHundred;
 			} else {
 				return 0;
@@ -201,8 +211,9 @@ public class JavaSpringPointProjectApplication {
 			ArrayList<HashMap<String, Integer>> customerDatePointsMaps = new ArrayList<>();
 			for (Triplet<String, String, Double> sale : customerSalesData ){
 				dateAmount.put(sale.getValue0(), countPoints(sale.getValue2()));
-				customerDatePointsMaps.add(dateAmount);
 			}
+			customerDatePointsMaps.add(dateAmount);
+//			System.out.println("customerDatePointsMaps: " + customerDatePointsMaps);
 			return customerDatePointsMaps;
 		}
 }
