@@ -24,28 +24,28 @@ public class JavaSpringPointProjectApplication {
 //          ·        Check solution into GitHub
 
 //		************************** Test Data ******************************************************************************
-		Triplet<String, String, Double> sale1 = new Triplet<String, String, Double>("01/02/2020", "John Coltrane", 250.05);
-		Triplet<String, String, Double> sale2 = new Triplet<String, String, Double>("01/13/2020", "Miles Davis", 100.05);
-		Triplet<String, String, Double> sale3 = new Triplet<String, String, Double>("01/16/2020", "Thelonius Monk", 50.99);
-		Triplet<String, String, Double> sale4 = new Triplet<String, String, Double>("01/22/2020", "John Coltrane", 25.50);
-		Triplet<String, String, Double> sale5 = new Triplet<String, String, Double>("01/23/2020", "Thelonius Monk", 250.05);
-		Triplet<String, String, Double> sale6 = new Triplet<String, String, Double>("01/23/2020", "Thelonius Monk", 200.80);
-		Triplet<String, String, Double> sale7 = new Triplet<String, String, Double>("02/02/2020", "John Coltrane", 49.75);
-		Triplet<String, String, Double> sale8 = new Triplet<String, String, Double>("02/02/2020", "Louis Armstrong", 125.99);
-		Triplet<String, String, Double> sale9 = new Triplet<String, String, Double>("03/02/2020", "John Coltrane", 250.05);
-		Triplet<String, String, Double> sale10 = new Triplet<String, String, Double>("03/06/2020", "John Coltrane", 300.65);
-		Triplet<String, String, Double> sale11 = new Triplet<String, String, Double>("03/15/2020", "Cannonball Adderley", 250.05);
-		Triplet<String, String, Double> sale12 = new Triplet<String, String, Double>("03/16/2020", "Miles Davis", 199.25);
-		Triplet<String, String, Double> sale13 = new Triplet<String, String, Double>("03/22/2020", "Thelonius Monk", 99.95);
-		Triplet<String, String, Double> sale14 = new Triplet<String, String, Double>("03/23/2020", "Louis Armstrong", 1000.95);
-		Triplet<String, String, Double> sale15 = new Triplet<String, String, Double>("03/26/2020", "Miles Davis", 100.05);
-		Triplet<String, String, Double> sale16 = new Triplet<String, String, Double>("01/06/2020", "John Coltrane", 199.05);
-		Triplet<String, String, Double> sale17 = new Triplet<String, String, Double>("02/06/2020", "Louis Armstrong", 299.05);
-		Triplet<String, String, Double> sale18 = new Triplet<String, String, Double>("02/20/2020", "Benny Goodman", 357.50);
-		Triplet<String, String, Double> sale19 = new Triplet<String, String, Double>("03/29/2020", "Django Reinhardt", 29.99);
-		Triplet<String, String, Double> sale20 = new Triplet<String, String, Double>("03/30/2020", "Miles Davis", 60.65);
+		Triplet<String, String, Double> sale1 = new Triplet<>("01/02/2020", "John Coltrane", 250.05);
+		Triplet<String, String, Double> sale2 = new Triplet<>("01/13/2020", "Miles Davis", 100.05);
+		Triplet<String, String, Double> sale3 = new Triplet<>("01/16/2020", "Thelonius Monk", 50.99);
+		Triplet<String, String, Double> sale4 = new Triplet<>("01/22/2020", "John Coltrane", 25.50);
+		Triplet<String, String, Double> sale5 = new Triplet<>("01/23/2020", "Thelonius Monk", 250.05);
+		Triplet<String, String, Double> sale6 = new Triplet<>("01/23/2020", "Thelonius Monk", 200.80);
+		Triplet<String, String, Double> sale7 = new Triplet<>("02/02/2020", "John Coltrane", 49.75);
+		Triplet<String, String, Double> sale8 = new Triplet<>("02/02/2020", "Louis Armstrong", 125.99);
+		Triplet<String, String, Double> sale9 = new Triplet<>("03/02/2020", "John Coltrane", 250.05);
+		Triplet<String, String, Double> sale10 = new Triplet<>("03/06/2020", "John Coltrane", 300.65);
+		Triplet<String, String, Double> sale11 = new Triplet<>("03/15/2020", "Cannonball Adderley", 250.05);
+		Triplet<String, String, Double> sale12 = new Triplet<>("03/16/2020", "Miles Davis", 199.25);
+		Triplet<String, String, Double> sale13 = new Triplet<>("03/22/2020", "Thelonius Monk", 99.95);
+		Triplet<String, String, Double> sale14 = new Triplet<>("03/23/2020", "Louis Armstrong", 1000.95);
+		Triplet<String, String, Double> sale15 = new Triplet<>("03/26/2020", "Miles Davis", 100.05);
+		Triplet<String, String, Double> sale16 = new Triplet<>("01/06/2020", "John Coltrane", 199.05);
+		Triplet<String, String, Double> sale17 = new Triplet<>("02/06/2020", "Louis Armstrong", 299.05);
+		Triplet<String, String, Double> sale18 = new Triplet<>("02/20/2020", "Benny Goodman", 357.50);
+		Triplet<String, String, Double> sale19 = new Triplet<>("03/29/2020", "Django Reinhardt", 29.99);
+		Triplet<String, String, Double> sale20 = new Triplet<>("03/30/2020", "Miles Davis", 60.65);
 
-		ArrayList<Triplet<String, String, Double>> dataSet1 = new ArrayList<Triplet<String, String, Double>>();
+		ArrayList<Triplet<String, String, Double>> dataSet1 = new ArrayList<>();
 		dataSet1.add(sale1);
 		dataSet1.add(sale2);
 		dataSet1.add(sale3);
@@ -53,7 +53,7 @@ public class JavaSpringPointProjectApplication {
 		dataSet1.add(sale5);
 		dataSet1.add(sale6);
 
-		ArrayList<Triplet<String, String, Double>> dataSet2 = new ArrayList<Triplet<String, String, Double>>();
+		ArrayList<Triplet<String, String, Double>> dataSet2 = new ArrayList<>();
 		dataSet2.add(sale7);
 		dataSet2.add(sale8);
 		dataSet2.add(sale9);
@@ -61,7 +61,7 @@ public class JavaSpringPointProjectApplication {
 		dataSet2.add(sale11);
 		dataSet2.add(sale12);
 
-		ArrayList<Triplet<String, String, Double>> dataSet3 = new ArrayList<Triplet<String, String, Double>>();
+		ArrayList<Triplet<String, String, Double>> dataSet3 = new ArrayList<>();
 		dataSet3.add(sale13);
 		dataSet3.add(sale14);
 		dataSet3.add(sale15);
@@ -69,7 +69,7 @@ public class JavaSpringPointProjectApplication {
 		dataSet3.add(sale17);
 		dataSet3.add(sale18);
 
-		ArrayList<Triplet<String, String, Double>> dataSet4 = new ArrayList<Triplet<String, String, Double>>();
+		ArrayList<Triplet<String, String, Double>> dataSet4 = new ArrayList<>();
 		dataSet4.add(sale1);
 		dataSet4.add(sale2);
 		dataSet4.add(sale3);
@@ -138,7 +138,6 @@ public class JavaSpringPointProjectApplication {
 			Quintet<String, Integer, Integer, Integer, Integer> results = Quintet.with(customer, monthlyPointTotals.get("jan"),monthlyPointTotals.get("feb"), monthlyPointTotals.get("march"), monthlyPointTotals.get("three"));
 			calculatedResults.add(results);
 		}
-//		System.out.println("calculatedResults: " + calculatedResults);
 		return calculatedResults;
 	}
 //	            method to create an arrayList of customer names
@@ -148,7 +147,6 @@ public class JavaSpringPointProjectApplication {
 			if (!customerList.contains(sale.getValue1()))
 			customerList.add(sale.getValue1());
 		}
-//		System.out.println("customerList: " + customerList);
 		return customerList;
 	}
 //	          method to create an arrayList of sales records for each customer
@@ -158,7 +156,6 @@ public class JavaSpringPointProjectApplication {
 			if (sale.getValue1().equals(name))
 				customerSalesData.add(sale);
 		}
-//		System.out.println("customerSalesData: " + customerSalesData);
 		return customerSalesData;
 	}
 //	          method to find points for each month
@@ -185,7 +182,6 @@ public class JavaSpringPointProjectApplication {
 				monthlyPointTotals.put("feb", febTotalPoints);
 				monthlyPointTotals.put("march", marchTotalPoints);
 				monthlyPointTotals.put("three", threeMonthTotalPoints);
-//				System.out.println("monthlyPointTotals:" + monthlyPointTotals);
 				return monthlyPointTotals;
 			}
 ////	         method to calculate points
@@ -199,7 +195,6 @@ public class JavaSpringPointProjectApplication {
 				return amountSpent.intValue() - 50;
 			} else if (amountSpent >= 100.00) {
 				pointCounterOverOneHundred += ((amountSpent.intValue()) - 100) * 2;
-//				System.out.println("pointCounterOverOneHundred: " + pointCounterOverOneHundred);
 				return pointCounterOverOneHundred;
 			} else {
 				return 0;
@@ -213,7 +208,6 @@ public class JavaSpringPointProjectApplication {
 				dateAmount.put(sale.getValue0(), countPoints(sale.getValue2()));
 			}
 			customerDatePointsMaps.add(dateAmount);
-//			System.out.println("customerDatePointsMaps: " + customerDatePointsMaps);
 			return customerDatePointsMaps;
 		}
-}
+	}
