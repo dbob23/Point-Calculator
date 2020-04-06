@@ -91,39 +91,34 @@ public class JavaSpringPointProjectApplication {
 		dataSet4.add(sale19);
 		dataSet4.add(sale20);
 // ************************************************************************************
+	String newline = System.lineSeparator();
+	System.out.println("DATA SET 1" + newline);
 	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet1) ){
-		String newline = System.lineSeparator();
-		System.out.println(newline + "DATA SET 1" + newline);
 		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
 			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
 			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: " + answerSet.getValue4() + newline);
 	}
+	System.out.println(newline + "DATA SET 2" + newline);
 	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet2) ){
-		String newline = System.lineSeparator();
-		System.out.println(newline + "DATA SET 2" + newline);
 		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
 			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
 			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
 			+ answerSet.getValue4() + newline);
 		}
+	System.out.println(newline + "DATA SET 3" + newline);
 	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet3) ){
-		String newline = System.lineSeparator();
-		System.out.println(newline + "DATA SET 3" + newline);
 		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
 			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
 			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
 			+ answerSet.getValue4() + newline);
 		}
+	System.out.println(newline + "DATA SET 4" + newline);
 	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet4) ){
-		String newline = System.lineSeparator();
-		System.out.println(newline + "DATA SET 4" + newline);
 		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
 			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
 			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
 			+ answerSet.getValue4() + newline);
 		}
-
-
 	}
 //	                       method to calculate points for each customer for each month
 	public static ArrayList<Quintet<String, Integer, Integer, Integer, Integer>>calculatePoints(ArrayList<Triplet<String, String, Double>> dataSet) {
@@ -173,17 +168,17 @@ public class JavaSpringPointProjectApplication {
 					febTotalPoints += entry.getValue();
 				} else {
 					marchTotalPoints += entry.getValue();
+					}
 				}
 			}
+			threeMonthTotalPoints = janTotalPoints + febTotalPoints + marchTotalPoints;
+			HashMap<String, Integer> monthlyPointTotals = new HashMap<>();
+			monthlyPointTotals.put("jan", janTotalPoints);
+			monthlyPointTotals.put("feb", febTotalPoints);
+			monthlyPointTotals.put("march", marchTotalPoints);
+			monthlyPointTotals.put("three", threeMonthTotalPoints);
+			return monthlyPointTotals;
 		}
-				threeMonthTotalPoints = janTotalPoints + febTotalPoints + marchTotalPoints;
-				HashMap<String, Integer> monthlyPointTotals = new HashMap<>();
-				monthlyPointTotals.put("jan", janTotalPoints);
-				monthlyPointTotals.put("feb", febTotalPoints);
-				monthlyPointTotals.put("march", marchTotalPoints);
-				monthlyPointTotals.put("three", threeMonthTotalPoints);
-				return monthlyPointTotals;
-			}
 ////	         method to calculate points
 		public static Integer countPoints(Double amountSpent) {
 			Integer pointCounterOverOneHundred = 50;
