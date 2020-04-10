@@ -90,42 +90,34 @@ public class JavaSpringPointProjectApplication {
 		dataSet4.add(sale18);
 		dataSet4.add(sale19);
 		dataSet4.add(sale20);
-// ************************************************************************************
-	String newline = System.lineSeparator();
-	System.out.println("DATA SET 1" + newline);
-	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet1) ){
-		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: " + answerSet.getValue4() + newline);
+// ******************************* end test data *****************************************************
+		System.out.println("DATA SET 1");
+		displayCustomerPoints(dataSet1);
+
+		System.out.println("DATA SET 2");
+		displayCustomerPoints(dataSet2);
+
+		System.out.println("DATA SET 3");
+		displayCustomerPoints(dataSet3);
+
+		System.out.println("DATA SET 4");
+		displayCustomerPoints(dataSet4);
 	}
-	System.out.println(newline + "DATA SET 2" + newline);
-	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet2) ){
-		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
-			+ answerSet.getValue4() + newline);
+//	                  method to display points earned per customer, for each month and for the three month total
+	public static void displayCustomerPoints(ArrayList<Triplet<String, String, Double>> dataSet){
+		String newline = System.lineSeparator();
+		for (Quintet<String, Integer, Integer, Integer, Integer> answerSet : calculatePoints(dataSet)) {
+			System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
+				+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
+				+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
+				+ answerSet.getValue4() + newline);
+			}
 		}
-	System.out.println(newline + "DATA SET 3" + newline);
-	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet3) ){
-		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
-			+ answerSet.getValue4() + newline);
-		}
-	System.out.println(newline + "DATA SET 4" + newline);
-	for (Quintet<String, Integer, Integer, Integer, Integer>answerSet : calculatePoints(dataSet4) ){
-		System.out.println("Customer Name: " + answerSet.getValue0() + newline + "Points earned in January 2020: "
-			+ answerSet.getValue1() + newline + "Points earned in February 2020: " + answerSet.getValue2() + newline
-			+ "Points earned in March 2020: " + answerSet.getValue3() + newline + "Points earned in the first three months of 2020: "
-			+ answerSet.getValue4() + newline);
-		}
-	}
-//	                       method to calculate points for each customer for each month
+//	                      method to calculate points for each customer for each month
 	public static ArrayList<Quintet<String, Integer, Integer, Integer, Integer>>calculatePoints(ArrayList<Triplet<String, String, Double>> dataSet) {
 		ArrayList<String> customerNames = getCustomerNames(dataSet);
 		ArrayList<Triplet<String, String, Double>> singleCustomerSalesData = new ArrayList<>();
 		ArrayList<Quintet<String, Integer, Integer, Integer, Integer>> calculatedResults = new ArrayList<>();
-
 		for (String customer : customerNames) {
 			singleCustomerSalesData = getSingleCustomerSalesData(customer, dataSet);
 			ArrayList<HashMap<String, Integer>> customerTotalPoints = getAwardedPoints(singleCustomerSalesData);
@@ -159,7 +151,6 @@ public class JavaSpringPointProjectApplication {
 		Integer febTotalPoints = 0;
 		Integer marchTotalPoints = 0;
 		Integer threeMonthTotalPoints;
-
 		for (HashMap<String, Integer> pointDateMap : customerPointsDateMaps) {
 			for (Map.Entry<String, Integer> entry : pointDateMap.entrySet()) {
 				if (entry.getKey().substring(0, 2).equals("01")) {
